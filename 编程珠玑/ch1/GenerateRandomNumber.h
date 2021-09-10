@@ -8,5 +8,6 @@
 #include<string>
 
 bool GenerateRandom(int num, std::string fileName);
+bool GenerateRandom(int num, std::string fileName, unsigned long len);
 
 #endif

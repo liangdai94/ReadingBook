@@ -23,3 +23,26 @@ bool GenerateRandom(int num, string fileName){
 
         return true;
 }
+
+bool GenerateRandom(int num, string fileName, unsigned long len){
+        ofstream outfile;
+
+        try{
+                outfile.open(fileName);
+                if(!outfile){
+                        throw "open file error";
+                }
+
+                srand(static_cast<unsigned int>(time(nullptr)));
+
+                while(num--){
+                        outfile << rand()%len << endl;
+                }
+        }
+        catch(const char * msg){
+                cout << msg << endl;
+                return false;
+        }
+
+        return true;
+}
